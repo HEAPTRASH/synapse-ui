@@ -1,0 +1,70 @@
+/* Tailwind-style border reset: without it a single-side `border-t border-rule` paints the other
+   three sides at the UA's 3px `medium`. Widths come from utilities; the default colour is the
+   hairline, so `border-t` alone is already a rule. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--su-rule);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--su-font-sans);
+  font-size: var(--su-text-body);
+  font-weight: 400;
+  line-height: var(--su-leading-relaxed);
+  color: var(--su-label);
+  background: var(--su-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Zero specificity, so a component's own font utilities win over the inheritance. */
+:where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--su-accent);
+  text-decoration: none;
+}
+
+/* Prose links underline on hover; zero specificity so `no-underline` can opt a component out. */
+:where(a:hover) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--su-accent);
+  outline-offset: var(--su-focus-ring-offset);
+  box-shadow: none;
+}
+
+@media (prefers-contrast: more) {
+  :focus-visible {
+    outline: 2px solid var(--su-accent);
+    outline-offset: var(--su-focus-ring-offset);
+  }
+}

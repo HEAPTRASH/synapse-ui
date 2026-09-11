@@ -1,0 +1,13 @@
+import { chromium } from '@playwright/test';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1100}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://localhost:5173');await page.waitForTimeout(500);
+await page.screenshot({path:'/private/tmp/synapse-desktop.png',fullPage:false});
+await page.getByRole('button',{name:'Switch to dark mode',exact:true}).click();
+await page.waitForTimeout(350);
+await page.screenshot({path:'/private/tmp/synapse-dark.png',fullPage:false});
+await page.getByRole('button',{name:'Switch to light mode',exact:true}).click();
+await page.setViewportSize({width:390,height:844});await page.waitForTimeout(350);await page.screenshot({path:'/private/tmp/synapse-mobile.png',fullPage:false});
+console.log(JSON.stringify({errors,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}));
+await page.setViewportSize({width:1440,height:1000});await page.goto('http://localhost:5173/#Button');await page.waitForTimeout(350);await page.screenshot({path:'/private/tmp/synapse-detail.png'});await browser.close();

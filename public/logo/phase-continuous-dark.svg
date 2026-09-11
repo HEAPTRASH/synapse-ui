@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 200 200" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">SynapseWare — Phase, continuous, dark surfaces</title>
+  <desc id="desc">Phase symbol for dark surfaces: a lit blue glass body with the blue, cyan and teal glows at full strength and a brighter rim. Transparent background; native SVG paths, gradients and filters only.</desc>
+  <defs>
+    <path id="upper" d="M21.300618851 93.114696323 A79 79 0 0 1 164.713011499 54.687461528 C176.135173904 71.000000000 166.943095768 71.000000000 155.000000000 71.000000000 L107.000000000 71.000000000 C102.500000000 71.000000000 98.000000000 71.000000000 93.500000000 75.500000000 C89.000000000 80.000000000 89.000000000 84.500000000 89.000000000 89.000000000 C89.000000000 93.500000000 89.000000000 98.000000000 84.500000000 102.500000000 C80.000000000 107.000000000 75.500000000 107.000000000 71.000000000 107.000000000 L38.000000000 107.000000000 C23.788714498 107.000000000 20.085812189 107.000000000 21.300618851 93.114696323 Z"/>
+    <path id="lower" d="M178.699381149 106.885303677 A79 79 0 0 1 35.286988501 145.312538472 C23.864826096 129.000000000 33.056904232 129.000000000 45.000000000 129.000000000 L93.000000000 129.000000000 C97.500000000 129.000000000 102.000000000 129.000000000 106.500000000 124.500000000 C111.000000000 120.000000000 111.000000000 115.500000000 111.000000000 111.000000000 C111.000000000 106.500000000 111.000000000 102.000000000 115.500000000 97.500000000 C120.000000000 93.000000000 124.500000000 93.000000000 129.000000000 93.000000000 L162.000000000 93.000000000 C176.211285502 93.000000000 179.914187811 93.000000000 178.699381149 106.885303677 Z"/>
+    <clipPath id="shape"><use href="#upper"/><use href="#lower"/></clipPath>
+    <linearGradient id="body" x1="60" y1="20" x2="134" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#155E80"/><stop offset=".55" stop-color="#1C3F97"/><stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="spectrum" x1="26" y1="99" x2="155" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8"/><stop offset=".27" stop-color="#3E8BF4"/><stop offset=".53" stop-color="#2BBEE8"/><stop offset=".72" stop-color="#22C1E0"/><stop offset=".86" stop-color="#2DD4BF"/><stop offset="1" stop-color="#7FF0E2"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="63" y1="145" x2="171" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8"/><stop offset=".45" stop-color="#3B82F6"/><stop offset=".76" stop-color="#22C1E0"/><stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <radialGradient id="blue"><stop stop-color="#3E8BF4" stop-opacity=".65"/><stop offset=".44" stop-color="#1D4ED8" stop-opacity=".4"/><stop offset="1" stop-color="#0F2971" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cyan"><stop stop-color="#3FDDD2" stop-opacity=".58"/><stop offset=".4" stop-color="#22C1E0" stop-opacity=".35"/><stop offset="1" stop-color="#0F6475" stop-opacity="0"/></radialGradient>
+    <filter id="cloud" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <linearGradient id="rim" x1="31" y1="38" x2="161" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3E8BF4"/><stop offset=".24" stop-color="#7FF0E2"/><stop offset=".45" stop-color="#158CA3"/><stop offset=".65" stop-color="#22C1E0"/><stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#body)"><use href="#upper"/><use href="#lower"/></g>
+  <!-- G2 curvature-continuous outer transitions and inner S. Both halves share the same geometry, rotated 180 degrees. -->
+  <g clip-path="url(#shape)">
+    <g opacity="1">
+    <ellipse cx="48" cy="61" rx="64" ry="53" fill="url(#blue)"/>
+    <ellipse cx="110" cy="29" rx="57" ry="49" fill="url(#cyan)"/>
+    <ellipse cx="148" cy="153" rx="65" ry="49" fill="url(#blue)"/>
+    <ellipse cx="152" cy="106" rx="40" ry="40" fill="url(#cyan)" opacity=".65"/>
+    <g filter="url(#cloud)" stroke-linecap="round">
+      <path d="M21 103 A79 79 0 0 1 166 55" stroke="url(#spectrum)" stroke-width="17" opacity=".85"/>
+      <path d="M173 94 C179 119 170 147 149 160" stroke="url(#cool)" stroke-width="15" opacity=".7"/>
+      <path d="M55 128 H100 Q111 128 111 113" stroke="#3B82F6" stroke-width="9" opacity=".55"/>
+    </g>
+    <g filter="url(#soft)">
+      <path d="M21.31 107 A79 79 0 0 1 168 60" stroke="url(#spectrum)" stroke-width="5.5" opacity=".84"/>
+      <path d="M178.689 93 A79 79 0 0 1 79 176" stroke="url(#cool)" stroke-width="4.5" opacity=".8"/>
+      <path d="M167 72 H100 Q89 72 89 83 V96 Q89 107 78 107" stroke="url(#cool)" stroke-width="3" opacity=".65"/>
+    </g>
+    </g>
+    <g stroke="url(#rim)" stroke-width="2" opacity=".9"><use href="#upper"/><use href="#lower"/></g>
+  </g>
+</svg>
