@@ -32,8 +32,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "preview": "vite preview",
     "test:browser": "node scripts/verify.mjs",
-    "patch:beam": "node scripts/patch-border-beam.mjs",
-    "prepare": "npm run build"
+    "patch:beam": "node scripts/patch-border-beam.mjs"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
