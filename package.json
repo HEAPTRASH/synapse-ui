@@ -1,7 +1,7 @@
 {
   "name": "synapse-ui",
   "version": "0.1.0",
-  "description": "SynapseWare brand React UI library — UnoCSS + Radix primitives",
+  "description": "SynapseWare brand React UI library \u2014 UnoCSS + Radix primitives",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,12 +13,14 @@
       "require": "./dist/index.cjs"
     },
     "./styles.css": "./dist/assets/styles.css",
-    "./tokens.css": "./src/styles/tokens.css"
+    "./tokens.css": "./src/styles/tokens.css",
+    "./uno.config": "./uno.config.ts"
   },
   "files": [
     "dist",
     "src/styles",
-    "src/materials/*.css"
+    "src/materials/*.css",
+    "uno.config.ts"
   ],
   "sideEffects": [
     "**/*.css"
@@ -30,7 +32,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "preview": "vite preview",
     "test:browser": "node scripts/verify.mjs",
-    "patch:beam": "node scripts/patch-border-beam.mjs"
+    "patch:beam": "node scripts/patch-border-beam.mjs",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
